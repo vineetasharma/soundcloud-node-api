@@ -1,0 +1,19 @@
+{
+  "name": "SoundCloud_Node_API",
+  "version": "0.0.2",
+  "description": "",
+  "main": "sound-cloud-api.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vineetasharma/SoundCloud_Node_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vineetasharma/SoundCloud_Node_API/issues"
+  },
+  "homepage": "https://github.com/vineetasharma/SoundCloud_Node_API#readme",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
+}
