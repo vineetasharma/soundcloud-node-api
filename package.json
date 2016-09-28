@@ -3,13 +3,17 @@
   "version": "0.0.2",
   "description": "",
   "main": "sound-cloud-api.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vineetasharma/SoundCloud_Node_API.git"
   },
-  "author":{
+  "author": {
     "name": "Vineeta Sharma",
-    "email":"vineetasharma18791@gmail.com"
+    "email": "vineetasharma18791@gmail.com"
   },
   "license": "ISC",
   "bugs": {
@@ -17,6 +21,9 @@
   },
   "homepage": "https://github.com/vineetasharma/SoundCloud_Node_API#readme",
   "dependencies": {
-    "request": "^2.72.0"
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.0",
+    "request": "^2.72.0",
+    "should": "^11.1.0"
   }
 }
