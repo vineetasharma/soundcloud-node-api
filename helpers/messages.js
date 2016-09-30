@@ -5,6 +5,7 @@ module.exports = {
         UNDEFINED_FOLLOWING_ID: 'following_id is not provided',
         UNDEFINED_FOLLOWER_ID: 'follower_id is not provided',
         UNDEFINED_TRACK_ID: 'track_id is not provided',
+        UNDEFINED_COMMENT_ID: 'comment_id is not provided',
         UNDEFINED_CALLBACK_URL: 'callback_url is not provided',
         NOT_FOUND:'result not found'
     }
