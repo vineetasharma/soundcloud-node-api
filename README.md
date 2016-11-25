@@ -49,14 +49,14 @@ soundCloud.getUserTracks(userId,function (err, tracks) {
 });
 ```
 
-#####get playlists of a particular User
+#####get playLists of a particular User
 ```javascript
-soundCloud.getUserPlaylists(userId,function (err, playlists) {
+soundCloud.getUserPlaylists(userId,function (err, playLists) {
   if (err) {
     console.error("Error:", err);
   }
   if (result) {
-    console.log("Playlists: ", JSON.parse(playlists));
+    console.log("PlayLists: ", JSON.parse(playLists));
   }
 });
 ```
