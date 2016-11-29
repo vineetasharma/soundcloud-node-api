@@ -1,16 +1,16 @@
 # SoundCloud_Node_API
 
-SoundCloud_Node_API is designed to get data from  SoundCloud API in a very simplest way. It provides the all APIs for User,TRacks and Playlist.
+soundcloud-node-api is designed to get data from  SoundCloud API in a very simplest way. It provides the all APIs for User,Tracks and Playlist.
 
 ##  How to install
-`npm install SoundCloud_Node_API --save`
+`npm install soundcloud-node-api --save`
 
 ## How to use
 
 *example*
 
 ```javascript
-var soundCloud = require('SoundCloud_Node_API')(sound_cloud_clientId);
+var soundCloud = require('soundcloud-node-api')(sound_cloud_clientId);
 ```
 
 
