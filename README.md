@@ -1,6 +1,6 @@
 # SoundCloud_Node_API
 
-SoundCloud_Node_API is designed to get data from  SoundCloud API in a very simplest way.
+SoundCloud_Node_API is designed to get data from  SoundCloud API in a very simplest way. It provides the all APIs for User,TRacks and Playlist.
 
 ##  How to install
 `npm install SoundCloud_Node_API --save`
@@ -13,9 +13,11 @@ SoundCloud_Node_API is designed to get data from  SoundCloud API in a very simpl
 var soundCloud = require('SoundCloud_Node_API')(sound_cloud_clientId);
 ```
 
-#####Get All Users of SoundCloud
+
+### User APIs:
+##### Get All Users of SoundCloud
 ```javascript
-soundCloud.getAllUsers(function (err, result) {
+soundCloud.user.getAllUsers(function (err, result) {
   if (err) {
     console.error("Error:", err);
   }
@@ -25,9 +27,9 @@ soundCloud.getAllUsers(function (err, result) {
 });
 ```
 
-#####Get a particular user details on the basis of userId
+##### Get a particular user details on the basis of userId
 ```javascript
-soundCloud.getUserDetails(userId,function (err, userDetails) {
+soundCloud.user.getUserDetails(userId,function (err, userDetails) {
   if (err) {
     console.error("Error:", err);
   }
@@ -37,9 +39,9 @@ soundCloud.getUserDetails(userId,function (err, userDetails) {
 });
 ```
 
-#####get tracks of a particular User
+##### get tracks of a particular User
 ```javascript
-soundCloud.getUserTracks(userId,function (err, tracks) {
+soundCloud.user.getUserTracks(userId,function (err, tracks) {
   if (err) {
     console.error("Error:", err);
   }
@@ -49,9 +51,9 @@ soundCloud.getUserTracks(userId,function (err, tracks) {
 });
 ```
 
-#####get playLists of a particular User
+##### get playLists of a particular User
 ```javascript
-soundCloud.getUserPlaylists(userId,function (err, playLists) {
+soundCloud.user.getUserPlaylists(userId,function (err, playLists) {
   if (err) {
     console.error("Error:", err);
   }
@@ -61,9 +63,9 @@ soundCloud.getUserPlaylists(userId,function (err, playLists) {
 });
 ```
 
-#####get Followings of a particular User
+##### get Followings of a particular User
 ```javascript
-soundCloud.getUserFollowings(userId,function (err, followings) {
+soundCloud.user.getUserFollowings(userId,function (err, followings) {
   if (err) {
     console.error("Error:", err);
   }
@@ -73,9 +75,9 @@ soundCloud.getUserFollowings(userId,function (err, followings) {
 });
 ```
 
-#####get details of a following user of a particular User
+##### get details of a following user of a particular User
 ```javascript
-soundCloud.getUserFollowingUser(userId,followingId,function (err, followingUser) {
+soundCloud.user.getUserFollowingUser(userId,followingId,function (err, followingUser) {
   if (err) {
     console.error("Error:", err);
   }
@@ -85,9 +87,9 @@ soundCloud.getUserFollowingUser(userId,followingId,function (err, followingUser)
 });
 ```
 
-#####get Followers of a particular User
+##### get Followers of a particular User
 ```javascript
-soundCloud.getUserFollowers(userId,function (err, followers) {
+soundCloud.user.getUserFollowers(userId,function (err, followers) {
   if (err) {
     console.error("Error:", err);
   }
@@ -97,9 +99,9 @@ soundCloud.getUserFollowers(userId,function (err, followers) {
 });
 ```
 
-#####get a particular Follower's details of a particular User
+##### get a particular Follower's details of a particular User
 ```javascript
-soundCloud.getUserFollowerUser(userId,followerId,function (err, follower) {
+soundCloud.user.getUserFollowerUser(userId,followerId,function (err, follower) {
   if (err) {
     console.error("Error:", err);
   }
@@ -109,9 +111,9 @@ soundCloud.getUserFollowerUser(userId,followerId,function (err, follower) {
 });
 ```
 
-#####get Comments of a particular User
+##### get Comments of a particular User
 ```javascript
-soundCloud.getUserComments(userId,function (err, comments) {
+soundCloud.user.getUserComments(userId,function (err, comments) {
   if (err) {
     console.error("Error:", err);
   }
@@ -121,9 +123,9 @@ soundCloud.getUserComments(userId,function (err, comments) {
 });
 ```
 
-#####get favorite tracks of a User
+##### get favorite tracks of a User
 ```javascript
-soundCloud.getUserFavorites(userId,trackId,function (err, tracks) {
+soundCloud.user.getUserFavorites(userId,trackId,function (err, tracks) {
   if (err) {
     console.error("Error:", err);
   }
@@ -133,9 +135,9 @@ soundCloud.getUserFavorites(userId,trackId,function (err, tracks) {
 });
 ```
 
-#####get a particular FavoriteTrack of a User
+##### get a particular FavoriteTrack of a User
 ```javascript
-soundCloud.getUserFavoriteTrack(userId,trackId,function (err, track) {
+soundCloud.user.getUserFavoriteTrack(userId,trackId,function (err, track) {
   if (err) {
     console.error("Error:", err);
   }
@@ -145,9 +147,9 @@ soundCloud.getUserFavoriteTrack(userId,trackId,function (err, track) {
 });
 ```
 
-#####get Groups of a User
+##### get Groups of a User
 ```javascript
-soundCloud.getUserGroups(userId,function (err, groups) {
+soundCloud.user.getUserGroups(userId,function (err, groups) {
   if (err) {
     console.error("Error:", err);
   }
@@ -157,14 +159,76 @@ soundCloud.getUserGroups(userId,function (err, groups) {
 });
 ```
 
-#####get WebProfiles of a User
+##### get WebProfiles of a User
 ```javascript
-soundCloud.getUserWebProfiles(userId,function (err, profiles) {
+soundCloud.user.getUserWebProfiles(userId,function (err, profiles) {
   if (err) {
     console.error("Error:", err);
   }
   if (result) {
     console.log("Profiles: ", JSON.parse(profiles));
+  }
+});
+```
+
+### PlayList APIs:
+##### get a PlayList using playListId
+```javascript
+soundCloud.playLists.getAPlaylist(playListId,function (err, playList) {
+  if (err) {
+    console.error("Error:", err);
+  }
+  if (result) {
+    console.log("PlayList: ", JSON.parse(playList));
+  }
+});
+```
+
+### Tracks APIs:
+##### Get a track details using trackId
+```javascript
+soundCloud.tracks.getATrack(trackId,function (err, track) {
+  if (err) {
+    console.error("Error:", err);
+  }
+  if (result) {
+    console.log("Track details: ", JSON.parse(track));
+  }
+});
+```
+
+##### Get a track's comments using trackId
+```javascript
+soundCloud.tracks.getCommentsForTrack(trackId,function (err, comments) {
+  if (err) {
+    console.error("Error:", err);
+  }
+  if (result) {
+    console.log("Track comments: ", JSON.parse(comments));
+  }
+});
+```
+
+##### Get a particular comment of a track using trackId & commentId
+```javascript
+soundCloud.tracks.getACommentForTrack(trackId,commentId,function (err, comment) {
+  if (err) {
+    console.error("Error:", err);
+  }
+  if (result) {
+    console.log("Comment: ", JSON.parse(comment));
+  }
+});
+```
+
+##### Get the list of users who marked a particular track as favorite
+```javascript
+soundCloud.tracks.getFavoritersOfTrack(trackId,function (err, users) {
+  if (err) {
+    console.error("Error:", err);
+  }
+  if (result) {
+    console.log("Users: ", JSON.parse(users));
   }
 });
 ```

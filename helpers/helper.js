@@ -14,7 +14,7 @@ function getJsonData(url, cb) {
         if (res.statusCode == 200) {
             return cb(null, body);
         }
-        return cb(new Error(body), null);
+        return cb(new Error(JSON.stringify(body)), null);
     });
 }
 module.exports.getJsonData = getJsonData;
