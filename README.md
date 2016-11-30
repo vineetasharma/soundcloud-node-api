@@ -1,22 +1,19 @@
-# soundcloud-node-api
-
-**soundcloud-node-api** is designed to get data from  SoundCloud API in a very simplest way.The SoundCloud API exposes SoundCloud resources like sounds, sets(Playlists) and users.To access public resources you just have to pass a **sound_cloud_clientId** parameter. You can get the **sound_cloud_clientId** by registering the App over [here](https://developers.soundcloud.com/). **soundcloud-node-api** provides the all APIs for User,Tracks and Playlist.
-
-##  How to install
-`npm install soundcloud-node-api --save`
-
-## How to use
-
-*example*
-
-```javascript
-var soundCloud = require('soundcloud-node-api')(sound_cloud_clientId);
+#SoundCloud Node API(soundcloud-node-api) 
+**soundcloud-node-api**: _soundcloud-node-api_ is a node js utility module which supports most of the developer available for sound cloud. It is designed get data from  Sound Cloud API in a very simplest way. 
+The SoundCloud API exposes resources(rest api) to manage user data, sounds and play-lists. To access public resources(API), you just have to pass a **sound_cloud_clientId** as parameter. 
+You can get the **sound_cloud_clientId** by registering the App over [developer](https://developers.soundcloud.com/) page. 
+##How to install
+```bash
+    npm install soundcloud-node-api --save
 ```
-
-
-### User APIs:
- By using user's APIs, you can access all the resources of User.
-##### Get All Users of SoundCloud
+##How to initialize module 
+*example*
+```javascript
+    var soundCloud = require('soundcloud-node-api')(sound_cloud_clientId);
+```
+###User APIs:
+By using user's APIs, you can access all the resources of User.
+####Get All Users of SoundCloud
 ```javascript
 soundCloud.user.getAllUsers(function (err, result) {
   if (err) {
@@ -27,8 +24,7 @@ soundCloud.user.getAllUsers(function (err, result) {
   }
 });
 ```
-
-##### Get a particular user details on the basis of userId
+#####Get a user details by userId
 ```javascript
 soundCloud.user.getUserDetails(userId,function (err, userDetails) {
   if (err) {
@@ -39,8 +35,7 @@ soundCloud.user.getUserDetails(userId,function (err, userDetails) {
   }
 });
 ```
-
-##### get tracks of a particular User
+#####Get tracks of a User
 ```javascript
 soundCloud.user.getUserTracks(userId,function (err, tracks) {
   if (err) {
@@ -51,8 +46,7 @@ soundCloud.user.getUserTracks(userId,function (err, tracks) {
   }
 });
 ```
-
-##### get playLists of a particular User
+#####Get playLists of a User
 ```javascript
 soundCloud.user.getUserPlaylists(userId,function (err, playLists) {
   if (err) {
@@ -63,8 +57,7 @@ soundCloud.user.getUserPlaylists(userId,function (err, playLists) {
   }
 });
 ```
-
-##### get Followings of a particular User
+#####Get Followings of a User
 ```javascript
 soundCloud.user.getUserFollowings(userId,function (err, followings) {
   if (err) {
@@ -75,8 +68,7 @@ soundCloud.user.getUserFollowings(userId,function (err, followings) {
   }
 });
 ```
-
-##### get details of a following user of a particular User
+#####Get detail of a follower who follows another User, By user id and follower user id
 ```javascript
 soundCloud.user.getUserFollowingUser(userId,followingId,function (err, followingUser) {
   if (err) {
@@ -87,8 +79,7 @@ soundCloud.user.getUserFollowingUser(userId,followingId,function (err, following
   }
 });
 ```
-
-##### get Followers of a particular User
+#####Get list of users follows another User
 ```javascript
 soundCloud.user.getUserFollowers(userId,function (err, followers) {
   if (err) {
@@ -99,8 +90,7 @@ soundCloud.user.getUserFollowers(userId,function (err, followers) {
   }
 });
 ```
-
-##### get a particular Follower's details of a particular User
+#####Get a Follower's details of a User
 ```javascript
 soundCloud.user.getUserFollowerUser(userId,followerId,function (err, follower) {
   if (err) {
@@ -111,8 +101,7 @@ soundCloud.user.getUserFollowerUser(userId,followerId,function (err, follower) {
   }
 });
 ```
-
-##### get Comments of a particular User
+#####Get Comments of a User
 ```javascript
 soundCloud.user.getUserComments(userId,function (err, comments) {
   if (err) {
@@ -123,8 +112,7 @@ soundCloud.user.getUserComments(userId,function (err, comments) {
   }
 });
 ```
-
-##### get favorite tracks of a User
+#####Get favorite tracks of a User
 ```javascript
 soundCloud.user.getUserFavorites(userId,trackId,function (err, tracks) {
   if (err) {
@@ -135,8 +123,7 @@ soundCloud.user.getUserFavorites(userId,trackId,function (err, tracks) {
   }
 });
 ```
-
-##### get a particular FavoriteTrack of a User
+#####Get a FavoriteTrack of a User
 ```javascript
 soundCloud.user.getUserFavoriteTrack(userId,trackId,function (err, track) {
   if (err) {
@@ -147,8 +134,7 @@ soundCloud.user.getUserFavoriteTrack(userId,trackId,function (err, track) {
   }
 });
 ```
-
-##### get Groups of a User
+#####Get Groups of a User
 ```javascript
 soundCloud.user.getUserGroups(userId,function (err, groups) {
   if (err) {
@@ -159,8 +145,7 @@ soundCloud.user.getUserGroups(userId,function (err, groups) {
   }
 });
 ```
-
-##### get WebProfiles of a User
+#####Get WebProfiles of a User
 ```javascript
 soundCloud.user.getUserWebProfiles(userId,function (err, profiles) {
   if (err) {
@@ -171,10 +156,9 @@ soundCloud.user.getUserWebProfiles(userId,function (err, profiles) {
   }
 });
 ```
-
-### PlayList APIs:
- By using Sets/PlayLists APIs, you can access all the resources of PlayList.
-##### get a PlayList using playListId
+###PlayList APIs:
+By using Sets/PlayLists APIs, you can access all the resources of PlayList.
+#####Get a PlayList using playListId
 ```javascript
 soundCloud.playLists.getAPlaylist(playListId,function (err, playList) {
   if (err) {
@@ -185,10 +169,9 @@ soundCloud.playLists.getAPlaylist(playListId,function (err, playList) {
   }
 });
 ```
-
-### Tracks APIs:
- By using Tracks APIs, you can access all the resources of tracks.
-##### Get a track details using trackId
+###Tracks APIs:
+By using Tracks APIs, you can access all the resources of tracks.
+#####Get a track details using trackId
 ```javascript
 soundCloud.tracks.getATrack(trackId,function (err, track) {
   if (err) {
@@ -199,8 +182,7 @@ soundCloud.tracks.getATrack(trackId,function (err, track) {
   }
 });
 ```
-
-##### Get a track's comments using trackId
+#####Get a track's comments using trackId
 ```javascript
 soundCloud.tracks.getCommentsForTrack(trackId,function (err, comments) {
   if (err) {
@@ -211,8 +193,7 @@ soundCloud.tracks.getCommentsForTrack(trackId,function (err, comments) {
   }
 });
 ```
-
-##### Get a particular comment of a track using trackId & commentId
+#####Get a comment of a track using trackId & commentId
 ```javascript
 soundCloud.tracks.getACommentForTrack(trackId,commentId,function (err, comment) {
   if (err) {
@@ -223,8 +204,7 @@ soundCloud.tracks.getACommentForTrack(trackId,commentId,function (err, comment) 
   }
 });
 ```
-
-##### Get the list of users who marked a particular track as favorite
+#####Get the list of users who marked a track as favorite
 ```javascript
 soundCloud.tracks.getFavoritersOfTrack(trackId,function (err, users) {
   if (err) {
@@ -235,9 +215,8 @@ soundCloud.tracks.getFavoritersOfTrack(trackId,function (err, users) {
   }
 });
 ```
-
-##  How to test
-
+##How to test
 To run tests type: `npm test`
-
 To run tests with coverage type: `npm run coverage`
+##Issues/Bugs :heart::
+[Sound Cloud Node API Issue Tracker](https://github.com/vineetasharma/soundcloud-node-api/issues)
