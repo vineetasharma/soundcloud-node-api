@@ -15,7 +15,7 @@ var soundCloud = require('soundcloud-node-api')(sound_cloud_clientId);
 
 
 ### User APIs:
- By using user, APIs you can access all the resources of User.
+ By using user's APIs, you can access all the resources of User.
 ##### Get All Users of SoundCloud
 ```javascript
 soundCloud.user.getAllUsers(function (err, result) {
