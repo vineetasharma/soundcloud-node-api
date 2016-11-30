@@ -1,6 +1,6 @@
 # soundcloud-node-api
 
-*soundcloud-node-api* is designed to get data from  SoundCloud API in a very simplest way.The SoundCloud API exposes SoundCloud resources like sounds, sets(Playlists) and users.To access public resources you just have to pass a *sound_cloud_clientId* parameter. You can get the *sound_cloud_clientId* by registering the App over [here](https://developers.soundcloud.com/). *soundcloud-node-api* provides the all APIs for User,Tracks and Playlist.
+**soundcloud-node-api** is designed to get data from  SoundCloud API in a very simplest way.The SoundCloud API exposes SoundCloud resources like sounds, sets(Playlists) and users.To access public resources you just have to pass a **sound_cloud_clientId** parameter. You can get the **sound_cloud_clientId** by registering the App over [here](https://developers.soundcloud.com/). **soundcloud-node-api** provides the all APIs for User,Tracks and Playlist.
 
 ##  How to install
 `npm install soundcloud-node-api --save`
