@@ -1,6 +1,6 @@
 # soundcloud-node-api
 
-soundcloud-node-api is designed to get data from  SoundCloud API in a very simplest way.The SoundCloud API exposes SoundCloud resources like sounds, sets(Playlists) and users.To access public resources you just have to pass a sound_cloud_clientId parameter. You can get the sound_cloud_clientId by registering the App over [here](https://developers.soundcloud.com/). soundcloud-node-api provides the all APIs for User,Tracks and Playlist.
+*soundcloud-node-api* is designed to get data from  SoundCloud API in a very simplest way.The SoundCloud API exposes SoundCloud resources like sounds, sets(Playlists) and users.To access public resources you just have to pass a *sound_cloud_clientId* parameter. You can get the *sound_cloud_clientId* by registering the App over [here](https://developers.soundcloud.com/). *soundcloud-node-api* provides the all APIs for User,Tracks and Playlist.
 
 ##  How to install
 `npm install soundcloud-node-api --save`
@@ -14,7 +14,8 @@ var soundCloud = require('soundcloud-node-api')(sound_cloud_clientId);
 ```
 
 
-### User APIs: By using user APIs you can access all the resources of User.
+### User APIs:
+ By using user, APIs you can access all the resources of User.
 ##### Get All Users of SoundCloud
 ```javascript
 soundCloud.user.getAllUsers(function (err, result) {
@@ -171,7 +172,8 @@ soundCloud.user.getUserWebProfiles(userId,function (err, profiles) {
 });
 ```
 
-### PlayList APIs: By using Sets/PlayLists APIs, you can access all the resources of PlayList.
+### PlayList APIs:
+ By using Sets/PlayLists APIs, you can access all the resources of PlayList.
 ##### get a PlayList using playListId
 ```javascript
 soundCloud.playLists.getAPlaylist(playListId,function (err, playList) {
@@ -184,7 +186,8 @@ soundCloud.playLists.getAPlaylist(playListId,function (err, playList) {
 });
 ```
 
-### Tracks APIs: By using Tracks APIs, you can access all the resources of tracks.
+### Tracks APIs:
+ By using Tracks APIs, you can access all the resources of tracks.
 ##### Get a track details using trackId
 ```javascript
 soundCloud.tracks.getATrack(trackId,function (err, track) {
