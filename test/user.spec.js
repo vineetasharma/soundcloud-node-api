@@ -2,7 +2,7 @@
  * Created by ttnd on 28/9/16.
  */
 var assert = require('assert'),
-    Users = require('./../lib/users');
+    Users = require('./../lib/User');
 
 describe('Validating client_id: ', function () {
     it("should throw error with no client_id provided ", function () {
@@ -23,20 +23,11 @@ describe('Validating client_id: ', function () {
     });
 });
 describe('getAllUsers method::', function () {
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getAllUsers();
-            },
-            Error, 'callback_url is not provided'
-        );
-    });
     it("should not throw error when callback is provided ", function () {
         var user = new Users('client_Id');
         assert.doesNotThrow(
             function () {
-                user.getAllUsers(function (data, err) {
+                user.getAllUser(function (data, err) {
                 })
             },
             Error
@@ -51,15 +42,6 @@ describe('getUserDetails method::', function () {
                 user.getUserDetails();
             },
             Error, 'user_id is not provided'
-        );
-    });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserDetails('user_id');
-            },
-            Error, 'callback_url is not provided'
         );
     });
     it("should not throw error when user_id and callback are provided ", function () {
@@ -83,15 +65,6 @@ describe('getUserTracks method::', function () {
             Error, 'user_id is not provided'
         );
     });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserTracks('user_id');
-            },
-            Error, 'callback_url is not provided'
-        );
-    });
     it("should not throw error when user_id and callback are provided ", function () {
         var user = new Users('client_Id');
         assert.doesNotThrow(
@@ -113,15 +86,6 @@ describe('getUserPlaylists method::', function () {
             Error, 'user_id is not provided'
         );
     });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserPlaylists('user_id');
-            },
-            Error, 'callback_url is not provided'
-        );
-    });
     it("should not throw error when user_id and callback are provided ", function () {
         var user = new Users('client_Id');
         assert.doesNotThrow(
@@ -141,15 +105,6 @@ describe('getUserFollowings method::', function () {
                 user.getUserFollowings();
             },
             Error, 'user_id is not provided'
-        );
-    });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserFollowings('user_id');
-            },
-            Error, 'callback_url is not provided'
         );
     });
     it("should not throw error when user_id and callback are provided ", function () {
@@ -182,15 +137,6 @@ describe('getUserFollowingUser method::', function () {
             Error, 'following_id is not provided'
         );
     });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserFollowingUser('user_id', 'following_id');
-            },
-            Error, 'callback_url is not provided'
-        );
-    });
     it("should not throw error when user_id,following_id and callback are provided ", function () {
         var user = new Users('client_Id');
         assert.doesNotThrow(
@@ -210,15 +156,6 @@ describe('getUserFollowers method::', function () {
                 user.getUserFollowers();
             },
             Error, 'user_id is not provided'
-        );
-    });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserFollowers('user_id');
-            },
-            Error, 'callback_url is not provided'
         );
     });
     it("should not throw error when user_id and callback are provided ", function () {
@@ -251,15 +188,6 @@ describe('getUserFollowerUser method::', function () {
             Error, 'follower_id is not provided'
         );
     });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserFollowerUser('user_id', 'follower_id');
-            },
-            Error, 'callback_url is not provided'
-        );
-    });
     it("should not throw error when user_id,follower_id and callback are provided ", function () {
         var user = new Users('client_Id');
         assert.doesNotThrow(
@@ -290,15 +218,6 @@ describe('getUserFavoriteTrack method::', function () {
             Error, 'follower_id is not provided'
         );
     });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserFavoriteTrack('user_id', 'follower_id');
-            },
-            Error, 'callback_url is not provided'
-        );
-    });
     it("should not throw error when user_id,follower_id and callback are provided ", function () {
         var user = new Users('client_Id');
         assert.doesNotThrow(
@@ -318,15 +237,6 @@ describe('getUserComments method::', function () {
                 user.getUserComments();
             },
             Error, 'user_id is not provided'
-        );
-    });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserComments('user_id');
-            },
-            Error, 'callback_url is not provided'
         );
     });
     it("should not throw error when user_id and callback are provided ", function () {
@@ -350,15 +260,6 @@ describe('getUserFavorites method::', function () {
             Error, 'user_id is not provided'
         );
     });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserFavorites('user_id');
-            },
-            Error, 'callback_url is not provided'
-        );
-    });
     it("should not throw error when user_id and callback are provided ", function () {
         var user = new Users('client_Id');
         assert.doesNotThrow(
@@ -380,15 +281,6 @@ describe('getUserGroups method::', function () {
             Error, 'user_id is not provided'
         );
     });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserGroups('user_id');
-            },
-            Error, 'callback_url is not provided'
-        );
-    });
     it("should not throw error when user_id and callback are provided ", function () {
         var user = new Users('client_Id');
         assert.doesNotThrow(
@@ -408,15 +300,6 @@ describe('getUserWebProfiles method::', function () {
                 user.getUserWebProfiles();
             },
             Error, 'user_id is not provided'
-        );
-    });
-    it("should throw error when no callback is provided ", function () {
-        var user = new Users('client_Id');
-        assert.throws(
-            function () {
-                user.getUserWebProfiles('user_id');
-            },
-            Error, 'callback_url is not provided'
         );
     });
     it("should not throw error when user_id and callback are provided ", function () {
